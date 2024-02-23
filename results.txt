@@ -1,0 +1,101 @@
+name: Cheyenne Mowatt
+email: cmowatt@bu.edu
+
+puzzles with 5-move optimal solutions
+-------------------------------------
+algorithm                num. solved    avg. moves    avg. states tested
+------------------------------------------------------------------------
+random				10		5.0	487.9
+BFS				10		5.0	47.1
+DFS (depth limit 20)		10		16.2	19072.7
+DFS (depth limit 50)		10		48.2	49043.0
+Greedy Search (using h1) 	10		5.4	70.3
+A* (using h1)			10		5.0	6.5
+
+Reflection: All of the puzzles were solved for all of these algorithms. However, only the random, BFS, and A* algorithms had the expected average amount of 5.0 moves. Additionally, the DFS algorithms with depth limits of 20 and 50 generally took more moves to solve the puzzles with almost a hundred times more average states tested. As the depth limit increased, more average states were tested and it took longer for the algorithm to run.
+
+puzzles with 10-move optimal solutions
+-------------------------------------
+algorithm                num. solved    avg. moves    avg. states tested
+------------------------------------------------------------------------
+random				10		11.2	3485.9
+BFS				10		10.0	747.4
+DFS (depth limit 20)		10		18.8	24858.0
+DFS (depth limit 50)		10		49.2	92287.3
+Greedy Search (using h1) 	8		76.0	325.625
+A* (using h1)			10		10.0	27.3
+
+Reflection: For this file, the only algorithm that did not solve all ten puzzles was the Greedy Search (using h1). This is because it was taking and extremely long time so I terminated the search when it got slow around 90 seconds. Also, only the BFS and A* algorithm solved the puzzles in an expected average of 10.0 moves. Finally, because it took longer to solve that 5-move optimal puzzles, there are way more average states tested. Out of all the algorithms, A* had the fastest and most optimal results.
+
+puzzles with 15-move optimal solutions
+-------------------------------------
+algorithm                num. solved    avg. moves    avg. states tested
+------------------------------------------------------------------------
+random				8		19.25	31099.875
+BFS				10		15.0	12672.0
+DFS (depth limit 20)		10		17.8	68659.0 
+DFS (depth limit 50)		10		48.6	111406.0
+Greedy Search (using h1) 	6		90.3333 2718.0
+A* (using h1)			10		15.0	313.8
+
+Reflection: For both the random and Greedy Search algorithm, I had to terminate the search when they got slow around 90 seconds meaning that they were the only algorithms that did not solve all ten puzzles. Also, BFS and A* were the only algorithms that solved the puzzles with expected average expected 15.0 moves. The DFS with a depth limit tested the most average states while the A* was the fasted algorithm and tested the least. The puzzles with 15-move optimal solutions took way longer to solve than puzzles with puzzles with 5-move optimal solutions.
+
+heuristic h2
+------------
+This heuristic adds the number of tiles in the wrong row and the the number of tiles in the wrong column while still not overestimating.
+
+puzzles with 18-move optimal solutions
+--------------------------------------
+algorithm              num. solved    avg. moves    avg. states tested
+----------------------------------------------------------------------
+Greedy (heuristic h1)		8	145.75		8345.75
+Greedy (heuristic h2)		10	74.8		254.2
+
+
+A* (heuristic h1)		10	18.0		1602.0
+A* (heuristic h2)		10	18.0		510.9
+
+Reflection: The only algorithm that did not solve all 10 puzzles was the Greedy (heuristic h1) because I had to terminate the search when it was taking too long. Also, Greedy (heuristic h1) and Greedy (heuristic h2) did not match the expected average number of moves. I noticed that the h2 heuristic function worked faster in all instances meaning that I never had to terminate the search. Also, it found the answer faster meaning that the average number of states was less compared to h1 heuristic function.
+
+puzzles with 21-move optimal solutions
+--------------------------------------
+algorithm              num. solved    avg. moves    avg. states tested
+----------------------------------------------------------------------
+Greedy (heuristic h1)		5	104.6		4172.6
+Greedy (heuristic h2)		10	83.4		397.7
+
+
+A* (heuristic h1)		10	21.0		6301.7
+A* (heuristic h2)		10	21.0		1499.6
+
+
+Reflection: The Greedy (heuristic h1) algorithm was once again unable to solve all ten puzzles. However, I gave it 120 seconds before I terminated the search. I noticed an immediate difference when I ran the Greedy (heuristic h2) algorithm which solved all ten puzzled, just not in the 21.0 expected average moves. Both A* algorithms solved the 10 puzzles in the expected amount of moves, but the A* (heuristic h2) did it in less moves and ran faster.
+
+puzzles with 24-move optimal solutions
+--------------------------------------
+algorithm              num. solved    avg. moves    avg. states tested
+----------------------------------------------------------------------
+Greedy (heuristic h1)		6	 123.66666	2856.1666666666665
+Greedy (heuristic h2)		10       114.0		400.4
+
+
+A* (heuristic h1)		10	 24.0		26948.9
+A* (heuristic h2)		10	 24.0		5303.0
+
+
+Reflection: As usual, the Greedy (heuristic h1) algorithm was once again unable to solve all ten puzzles and made me terminate the search 4 times when it got slow. However, more surprising, the A* (heuristic h1) took longer to run than usual. Also, I noticed that Greedy (heuristic h2) has less average states tested than A* (heuristic h2), but has more average moves. Overall, A* (heuristic h2) did a great job of producing the expect average amount of moves of 24.0 efficiently unlike all the other algorithms.
+
+puzzles with 27-move optimal solutions
+--------------------------------------
+algorithm              num. solved    avg. moves    avg. states tested
+----------------------------------------------------------------------
+Greedy (heuristic h1)		4	197.5		4285.5
+Greedy (heuristic h2)		10	117.0		402.5
+
+
+A* (heuristic h1)		0
+A* (heuristic h2)		10	27.0		27526.8
+
+
+Reflection: Because it was expected to be solved in more moves, Greedy (heuristic h1) solved the least amount of puzzles so far. I had to terminate the search 6 times after around 90-120 seconds of waiting. I noticed an immediate difference in Greedy (heuristic h2) that ran in only a second. For the A* (heuristic h1), it an extremely long time to run every single line so I had to terminate the search every time. This was surprising because the A* algorithm typically runs in seconds. The A* (heuristic h2) also took longer than before, but was able to solve all 10 puzzles in 27.0 moves.
+
